@@ -1,2 +1,5 @@
-class Main
+class Dicegen
+
+  def
+
 end
