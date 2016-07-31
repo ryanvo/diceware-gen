@@ -1,7 +1,6 @@
 class Dicegen
 
-  def initialize(filename, random_word_service)
-    @filename = File.new(filename)
+  def initialize(random_word_service)
     @random_word_service = random_word_service
   end
 
@@ -10,11 +9,9 @@ class Dicegen
     raise ArgumentError, 'num_of_passwords must be > 0' unless num_of_passwords > 0
 
     passes = []
-
     num_of_passwords.times do
       passes.push(new_pass(num_of_phrases))
     end
-
     passes
   end
 
@@ -27,7 +24,7 @@ class Dicegen
   end
 
   def get_random_word
-    @random_word_service.getword
+    @random_word_service.random_word
   end
 
 end
