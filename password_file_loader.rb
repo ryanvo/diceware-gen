@@ -6,20 +6,17 @@ class PasswordFileLoader
 
   def generate_hash()
     map = {}
-    line = get_line
-    pair = create_pair(line)
-    map.store(pair[0], pair[1])
+    @file.each_line do |line|
+      pair = create_pair(line)
+      map.store(pair[0].to_s.to_sym, pair[1].to_sym)
+    end
     map
-  end
-
-  def get_line
-    @file.readline
   end
 
   def create_pair(line)
     first = line[0..4]
     second = line[6..-1]
-    [first.to_s.to_sym, second.to_sym]
+    [first, second]
   end
 
 end

@@ -1,5 +1,6 @@
 require 'net/http'
 require 'uri'
+require_relative 'password_file_loader'
 
 class RandomWordService
 
@@ -22,9 +23,8 @@ class RandomWordService
     params = {:num => 5, :min => 1, :max => 6, :col => 5, :base => 10, :format => 'plain', :rnd => 'new'}
 
     uri.query = URI.encode_www_form(params)
-    res = Net::HTTP.get_response(uri)
-    res.body.to_s.gsub!(/\s/, '') if res.is_a?(Net::HTTPSuccess)
-
+    response = Net::HTTP.get_response(uri)
+    response.body.to_s.gsub!(/\s/, '') if response.is_a?(Net::HTTPSuccess)
   end
 
 end
