@@ -3,7 +3,7 @@
 A ruby program to generate diceware passphrases with Random.org.
 
 [Diceware](http://world.std.com/~reinhold/diceware.html),
-[Random.org](https://www.random.org/randomness/)
+[Random.org](https://www.random.org/randomness/), [EFF's new wordlists 7-2016](https://www.eff.org/deeplinks/2016/07/new-wordlists-random-passphrases)
 
 ## Usage
 ```shell
@@ -19,9 +19,9 @@ Dicegen
     when number of passwords to generate is 0
       should throw an error
     when number of passphrases is n
-      should generate passwords with n=1 phrases
+      should generate passwords with n phrases
     when number of passwords is n
-      should generate n=1 passwords
+      should generate n passwords
   .new_pass
     should generate a new password with n white-space separated phrases
   .get_random_word
