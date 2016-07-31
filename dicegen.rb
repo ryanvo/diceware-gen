@@ -1,5 +1,5 @@
 class Dicegen
 
-  def
+
 
 end
