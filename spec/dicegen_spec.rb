@@ -40,7 +40,7 @@ describe Dicegen do
   end
 
   describe '.new_pass' do
-    it 'should generate a new password with n phrases' do
+    it 'should generate a new password with n white-space separated phrases' do
       n_phrases = rand(1..100)
       expect(dg).to receive(:get_random_word).exactly(n_phrases)
       expect(dg.new_pass(n_phrases).count(' ')).to eq(n_phrases - 1)
@@ -49,7 +49,7 @@ describe Dicegen do
 
   describe '.get_random_word' do
     it 'should generate a random word' do
-      expect(random_word_service).to receive(:random_word).exactly(1).times
+      expect(random_word_service).to receive(:new_word).exactly(1).times
       dg.get_random_word
     end
   end
