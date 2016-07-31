@@ -25,7 +25,7 @@ describe PasswordFileLoader do
     context 'for each line' do
       it 'should add a new pair to the hash' do
         @nextline = '11131 aide'
-        map = pfl.generate_hash()
+        map = pfl.generate_hash
         expect(map).to include(:"11131" => :aide)
         expect(map.size).to eql(1)
       end
